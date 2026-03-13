@@ -19,7 +19,13 @@
 			[class^="fa-"], [class*=" fa-"]::before {
 				font-family: "Font Awesome 5 Brands", "Font Awesome 5 Pro", "Font Awesome 5 Free", "Font Awesome 6 Brands", "Font Awesome 6 Pro", "Font Awesome 6 Free", sans-serif !important;
 				font-weight: 900 !important;
-				}</style>
+				}
+		/* 所有包含 nange.cn 的链接显示为可见但不可跳转风格 */
+		a[href*="nange.cn"] {
+			cursor: default;
+		}
+	
+	</style>
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -82,6 +88,17 @@
 	<script>
 		console.log("%c%c楠格%chttp://www.nange.cn", "line-height:28px;", "line-height:28px;padding:4px;background:#2ccbe6;color:#FADFA3;font-size:14px;", "padding:4px 4px 4px 2px;background:#ff146d;color:green;line-height:28px;font-size:12px;");
 	</script>
+
+		<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			document.querySelectorAll('a[href*="nange.cn"]').forEach(function (link) {
+				link.addEventListener('click', function (e) {
+					e.preventDefault();
+				});
+			});
+		});
+	</script>
+	
 	<script disable-devtool-auto src='http://fastly.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js'
 		disable-menu='false'></script>
 </body>
